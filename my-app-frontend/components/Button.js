@@ -1,0 +1,72 @@
+import { primary } from "@/lib/colors";
+import styled, { css } from "styled-components";
+
+export const ButtonStyle = css`
+  border: 0;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  ${(props) =>
+    props.block &&
+    css`
+      display: block;
+      font-weight: 200;
+      width: 100%;
+    `}
+  ${(props) =>
+    props.white &&
+    !props.outline &&
+    css`
+      background-color: #fff;
+      color: #000;
+    `}
+  ${(props) =>
+    props.white &&
+    props.outline &&
+    css`
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid #fff;
+    `}
+    ${(props) =>
+    props.black &&
+    props.outline &&
+    css`
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #222;
+    `}
+${(props) =>
+    props.primary &&
+    !props.outline &&
+    css`
+      background-color: ${primary};
+      color: #222;
+      border: 1px solid ${primary};
+    `}
+    ${(props) =>
+    props.primary &&
+    props.outline &&
+    css`
+      background-color: transparent;
+      color: #222;
+      border: 1px solid #222;
+    `}
+  ${(props) =>
+    props.size === "l" &&
+    css`
+      font-size: 1rem;
+      padding: 10px 20px;
+    `}
+`;
+const StyledButton = styled.button`
+  ${ButtonStyle};
+`;
+export default function Button({ children, ...rest }) {
+  return <StyledButton {...rest}>{children}</StyledButton>;
+}
