@@ -15,7 +15,7 @@ export default function Nav({ showNav }) {
     <aside
       className={
         (showNav ? "left-0" : "-left-full") +
-        " text-gray-500 p-4 pr-4 fixed w-full bg-gray-300 h-full top-0 md:static md:w-auto transition-all"
+        " text-gray-500 p-4 pr-4 fixed w-full bg-gray-300 h-full top-0 md:static md:w-auto md:h-screen transition-all"
       }
     >
       <Link rel="stylesheet" href={"/"} className="flex gap-1 mb-4 mr-4">
