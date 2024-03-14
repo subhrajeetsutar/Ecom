@@ -25,24 +25,15 @@ opacity: .6;
   border: 1px solid #ccc;
   border-radius: 2px;
   height: 40px;
-  /* height: auto; */
   padding: 1px;
   cursor: pointer;
 `;
 const BGImage = styled.img`
   max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  position: absolute;
-  /* top: 0;
-bottom: 0; */
+  max-height: 200px;
 `;
 const BGImageWrapper = styled.div`
-  /* text-align: center; */
-  /* height: 0; */
-  padding-bottom: 75%;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
 `;
 export default function ProductImages({ images }) {
   const [activeImage, setactiveImage] = useState(images?.[0]);
